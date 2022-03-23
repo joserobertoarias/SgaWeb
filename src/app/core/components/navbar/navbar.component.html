@@ -1,0 +1,33 @@
+
+<mat-toolbar color="primary">
+    <span>
+        <a mat-button routerLink="">
+            <mat-icon>apps</mat-icon>SgaWeb
+        </a>
+    </span>
+
+    <button mat-button [matMenuTriggerFor]="menuClientes" aria-label="Clientes">Clientes</button>    
+    <button mat-button [matMenuTriggerFor]="menuLineaProductos" aria-label="Linea de Productos">Linea de Productos</button>
+    <button mat-button [matMenuTriggerFor]="menuCaja" ari-label="Caja">Caja</button>
+
+</mat-toolbar>
+
+<mat-menu #menuLineaProductos="matMenu">
+    <button mat-menu-item routerLink="invoice/create">
+      <span>Generacion de Factura</span>
+    </button>
+  </mat-menu>
+
+<mat-menu #menuCaja="matMenu">
+    <button mat-menu-item routerLink="invoice">
+      <span>Facturas Emitidas</span>
+    </button>
+  </mat-menu>
+
+<mat-menu #menuClientes="matMenu">
+    <button mat-menu-item routerLink="customer">
+      <span>Lista de Clientes</span>
+    </button>
+  </mat-menu> 
+
+

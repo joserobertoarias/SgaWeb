@@ -1,35 +1,22 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { CancelComponent } from './components/cancel/cancel.component';
+import { CommonModule } from '@angular/common';
+
+import { InvoiceRoutingModule } from './invoice-routing.module';
 import { CreateComponent } from './components/create/create.component';
 import { DetailComponent } from './components/detail/detail.component';
 import { IndexComponent } from './components/index/index.component';
-
-const routes: Routes = [
-  {
-    path: 'create',
-    component: CreateComponent,
-  },
-  {
-    path: 'cancel',
-    component: CancelComponent
-  },
-  {
-    path: 'detail',
-    component: DetailComponent
-  },
-  {
-    path: 'index',
-    component: IndexComponent
-  },
-  {
-    path: '',
-    component: IndexComponent
-  }
-];
+import { CancelComponent } from './components/cancel/cancel.component';
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule],
+  declarations: [
+    CreateComponent,
+    DetailComponent,
+    IndexComponent,
+    CancelComponent
+  ],
+  imports: [
+    CommonModule,
+    InvoiceRoutingModule
+  ]
 })
-export class InvoiceModule {}
+export class InvoiceModule { }

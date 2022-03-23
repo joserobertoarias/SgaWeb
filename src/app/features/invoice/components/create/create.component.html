@@ -1,10 +1,126 @@
-<p>create works!</p>
-<label for="idCustomer">Codigo Cliente</label>
-<input type="text" id="idCustomer" name="idCustomer">
 
-<label for="cCommercialName">Facturar a nombre de</label>
-<input type="text" id="cCommercialName" name="cCommercialName">
+<label for="fae_codcli">Codigo Cliente</label>
+<input type="text" id="fae_codcli" name="fae_codcli">
 
-<label for="dEmission">Fecha</label>
-<input type="date" id="dEmission" name="dEmission">
+<label for="fae_cliente_nombre">Facturar a nombre de</label>
+<input type="text" id="fae_cliente_nombre" name="fae_cliente_nombre">
 
+<label for="fae_cliente_direccion">Direccion</label>
+<input type="text" id="fae_cliente_direccion" name="fae_cliente_direccion">
+
+<label for="fae_fecha">Fecha</label>
+<input type="date" id="fae_fecha" name="fae_fecha">
+
+<label for="fae_codrut">Ruta</label>
+<input type="text" id="fae_codrut" name="fae_codrut">
+
+<label for="fae_codsuc">Sucursal</label>
+<select id="fae_codsuc" name="fae_codsuc">
+    <option value="24">TEGUCIGALPA</option>
+    <option value="25">COMAYAGUA</option>
+    <option value="37">CHOLUTECA</option>
+</select>
+
+<label for="fae_condicion_pago">Condicion Pago</label>
+<select id="fae_condicion_pago" name="fae_condicion_pago">
+    <option value="CONTADO">CONTADO</option>
+    <option value="CREDITO">CREDITO</option>
+</select>
+
+<label for="fae_plazo">Plazo</label>
+<select id="fae_plazo" name="fae_plazo">
+    <option value=0>0</option>
+    <option value=7>7</option>
+    <option value=15>15</option>
+    <option value=30>30</option>
+</select>
+
+<label for="fae_fecha_vence">Fecha Vence</label>
+<input type="date" id="fae_fecha_vence" name="fae_fecha_vence">
+
+<label for="fae_exento">Exenta</label>
+<input type="checkbox" id="fae_exento" name="fae_exento">
+
+<label for="fae_unoporciento">Ret 1%</label>
+<input type="checkbox" id="fae_unoporciento" name="fae_unoporciento">
+
+<label for="fae_descxitem">Dscto. por Item</label>
+<input type="checkbox" id="fae_descxitem" name="fae_descxitem">
+
+<label for="fae_descglogal">Dscto. global</label>
+<input type="text" id="fae_descglogal" name="fae_descglogal">
+
+<div>
+    <table id="tblDetail">
+        <thead>
+            <tr>
+                <td>Codigo</td>
+                <td>Imp.</td>
+                <td>Cant.</td>
+                <td>Un.</td>
+                <td>Descripcion</td>
+                <td>Precio</td>
+                <td>Importe s/dscto.</td>
+                <td>Dscto %.</td>
+                <td>Importe c/dscto.</td>
+                <td>Impuesto</td>
+                <td>Total</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1101</td>
+                <td>G</td>
+                <td>1</td>
+                <td>UN</td>
+                <td>Descripcion del producto</td>
+                <td>1</td>
+                <td>1</td>
+                <td>0.</td>
+                <td>1</td>
+                <td>0.13</td>
+                <td>1.13</td>
+            </tr>
+        </tbody>
+    </table>    
+</div>
+<div>
+    <div>
+        <label for="subTotal">Sub Total</label>
+        <input type="number" value="1.13" readonly>
+    </div>
+    <div>
+        <label for="subTotalExento">Sub Total Exento</label>
+        <input type="number" value="0" readonly>
+    </div>        
+    <div>
+        <label for="subTotalGravado">Sub Total Gravado</label>
+        <input type="number" value="1.13" readonly>
+    </div>        
+    <div>
+        <label for="descuento">Descuento</label>
+        <input type="number" value="0" readonly>
+    </div>        
+    <div>
+        <label for="totalConDescuento">Total con Descuento</label>
+        <input type="number" value="1.13" readonly>
+    </div>        
+    <div>
+        <label for="impuesto">Impuesto</label>
+        <input type="number" value="0.13" readonly>
+    </div>       
+    <div>
+        <label for="subTotalConImpuesto">SubTota con Impuesto</label>
+        <input type="number" value="1.13" readonly>
+    </div>        
+    <div>
+        <label for="unoPorCiento">Retencion 1%</label>
+        <input type="number" value="0" readonly>
+    </div>        
+    <div>
+        <label for="granTotal">Gran Total</label>
+        <input type="number" value="1.13" readonly>
+    </div>        
+    
+    
+</div>
