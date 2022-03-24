@@ -6,38 +6,21 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavbarComponent } from './core/components/navbar/navbar.component';
-
-import { MatToolbarModule } from '@angular/material/toolbar'; 
-import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
-import { MatMenuModule } from '@angular/material/menu';
-import { MatFormFieldModule } from '@angular/material/form-field'; 
-import { MatInputModule } from '@angular/material/input'
-
-
+import { MaterialModule } from './material/material.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent, 
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MatToolbarModule,
-    MatButtonModule,
-    MatIconModule,
-    MatMenuModule,
-    MatFormFieldModule
+    MaterialModule
   ],
   exports: [
-    MatToolbarModule,
-    MatButtonModule,
-    MatIconModule,
-    MatMenuModule,
-    MatFormFieldModule
   ],
   providers: [
   ],
