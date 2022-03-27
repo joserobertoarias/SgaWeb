@@ -7,11 +7,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavbarComponent } from './core/components/navbar/navbar.component';
 import { MaterialModule } from './material/material.module';
+import { DialogBaseComponent } from './shared/components/dialog-base/dialog-base.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
+    DialogBaseComponent,
   ],
   imports: [
     BrowserModule,

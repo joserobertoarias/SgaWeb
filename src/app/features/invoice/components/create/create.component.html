@@ -123,8 +123,102 @@
         <input type="number" value="1.13" readonly>
     </div>            
 </div>
+<mat-card class="invoice-card" layout="row">
+    <mat-card-title>Factura</mat-card-title>
+    <mat-card-subtitle>De consumidor final</mat-card-subtitle>
+    <mat-card-content>
+        <div>
+            <div>
+                <mat-form-field appearance="outline" [style.fontSize.px]=13 [style.width.px]=80>
+                    <mat-label>Codigo</mat-label>
+                    <input matInput type="text" placeholder="0">
+                </mat-form-field>
+                <mat-form-field appearance="outline" [style.fontSize.px]=13 [style.width.px]=400>
+                    <mat-label>Nombre Cliente</mat-label>
+                    <input matInput type="text" placeholder="0">
+                </mat-form-field>
+                <mat-form-field appearance="outline" [style.fontSize.px]=13>
+                    <mat-label>Fecha</mat-label>
+                    <input matInput type="date" placeholder="0">
+                </mat-form-field>    
+                <mat-form-field appearance="outline">
+                    <mat-label>Condicion</mat-label>
+                    <mat-select>
+                      <mat-option value="CONTADO">CONTADO</mat-option>
+                      <mat-option value="CREDITO">CREDITO</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                  <mat-form-field appearance="outline" [style.width.px]=150>
+                    <mat-label>Plazo en dias</mat-label>
+                    <mat-select>
+                      <mat-option value="0">0</mat-option>
+                      <mat-option value="7">7</mat-option>
+                      <mat-option value="15">15</mat-option>                      
+                    </mat-select>
+                  </mat-form-field>                    
+                <mat-checkbox class="margin-checkbox">1% Ret.</mat-checkbox>
+                <mat-checkbox class="margin-checkbox">Exenta</mat-checkbox>                                  
+            </div>
+            <div>
+                <mat-form-field appearance="outline" [style.fontSize.px]=13 style="width: 100%;" >
+                    <mat-label>Direccion</mat-label>
+                    <input matInput type="text" placeholder="0">
+                </mat-form-field>
+            </div>
+        </div>
+        <div>
+            <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
-<mat-form-field appearance="fill">
-    <mat-label>Input</mat-label>
-    <input matInput>
-</mat-form-field>
+                <!--- Note that these columns can be defined in any order.
+                      The actual rendered columns are set as a property on the row definition" -->
+              
+                <!-- Position Column -->
+                <ng-container matColumnDef="position">
+                  <th mat-header-cell *matHeaderCellDef> No. </th>
+                  <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+                </ng-container>
+              
+                <!-- Name Column -->
+                <ng-container matColumnDef="name">
+                  <th mat-header-cell *matHeaderCellDef> Name </th>
+                  <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+                </ng-container>
+              
+                <!-- Weight Column -->
+                <ng-container matColumnDef="weight">
+                  <th mat-header-cell *matHeaderCellDef> Weight </th>
+                  <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
+                </ng-container>
+              
+                <!-- Symbol Column -->
+                <ng-container matColumnDef="symbol">
+                  <th mat-header-cell *matHeaderCellDef> Symbol </th>
+                  <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+                </ng-container>
+              
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+              </table>
+                            
+        </div>
+    </mat-card-content>
+    <mat-card-actions align="end">
+        <button mat-flat-button color="primary" (click)="openDialog()" #guardar [disabled]="!isEditing">Guardar</button>
+        <button mat-flat-button #cancelar>Cancelar</button>
+      </mat-card-actions>
+    <mat-card-footer>
+        <mat-progress-bar [mode]="progressBarMode"></mat-progress-bar>
+    </mat-card-footer>
+</mat-card>
+
+
+<button mat-raised-button (click)="openDialog()">Open Dialog</button>
+
+<mat-dialog-content>Dialog
+
+    
+</mat-dialog-content>
+<mat-dialog-actions>
+  <!-- The mat-dialog-close directive optionally accepts a value as a result for the dialog. -->
+  <button mat-button [mat-dialog-close]="true" color="warm">Aceptar</button>
+</mat-dialog-actions>
